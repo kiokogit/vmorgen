@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V MORGEN & SOEHNE LTD — Construction Company Kenya</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d2137;
+    --navy-mid: #1B3A5C;
+    --navy-light: #2a5280;
+    --gold: #C8960C;
+    --gold-light: #e8b020;
+    --gold-pale: #f5e6b8;
+    --cream: #f9f5ee;
+    --white: #ffffff;
+    --gray-100: #f4f4f4;
+    --gray-200: #e8e8e8;
+    --gray-500: #888;
+    --gray-700: #444;
+    --text: #1a1a2e;
+    --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ===================== NAV ===================== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(13,33,55,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 70px;
+    transition: var(--transition);
+  }
+  .nav-logo {
+    display: flex; flex-direction: column; line-height: 1;
+  }
+  .nav-logo .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 900;
+    color: var(--white); letter-spacing: 1px;
+  }
+  .nav-logo .sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; color: var(--gold); letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 6px; align-items: center; }
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: rgba(255,255,255,0.8);
+    text-decoration: none; padding: 8px 14px; border-radius: 2px;
+    transition: var(--transition); position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: 4px; left: 14px; right: 14px;
+    height: 1px; background: var(--gold); transform: scaleX(0);
+    transition: var(--transition); transform-origin: left;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  .nav-links a.active { color: var(--gold); }
+  .nav-links a.active::after { transform: scaleX(1); }
+  .nav-cta {
+    background: var(--gold) !important; color: var(--navy) !important;
+    font-weight: 700 !important; padding: 8px 18px !important;
+    border-radius: 2px;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* ===================== SECTIONS ===================== */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ===================== HERO ===================== */
+  #home-page { padding-top: 70px; }
+
+  .hero {
+    min-height: calc(100vh - 70px);
+    background:
+      linear-gradient(135deg, rgba(13,33,55,0.93) 0%, rgba(13,33,55,0.75) 50%, rgba(200,150,12,0.15) 100%),
+      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center/cover no-repeat;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      90deg, transparent, transparent 80px,
+      rgba(200,150,12,0.03) 80px, rgba(200,150,12,0.03) 81px
+    );
+  }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+    position: relative; z-index: 1;
+  }
+  .hero-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gold);
+    display: inline-block; margin-bottom: 24px;
+    border-left: 3px solid var(--gold); padding-left: 12px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 7vw, 88px); font-weight: 900;
+    line-height: 1.0; color: var(--white);
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--gold);
+    display: block;
+  }
+  .hero-sub {
+    font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.75);
+    max-width: 540px; margin: 28px 0 44px;
+    line-height: 1.7; animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-btns {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 16px 36px;
+    border: none; cursor: pointer; text-decoration: none;
+    display: inline-block; transition: var(--transition);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; padding: 15px 36px;
+    border: 1px solid rgba(255,255,255,0.4); cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: var(--transition);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex; gap: 48px; margin-top: 80px;
+    animation: fadeUp 0.8s 0.6s ease both;
+    border-top: 1px solid rgba(255,255,255,0.12); padding-top: 40px;
+  }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px; font-weight: 900; color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(255,255,255,0.55);
+    margin-top: 4px;
+  }
+
+  /* ===================== SERVICES STRIP ===================== */
+  .services-strip {
+    background: var(--navy);
+    display: grid; grid-template-columns: repeat(5, 1fr);
+  }
+  .service-tile {
+    padding: 32px 24px; text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer; transition: var(--transition);
+    position: relative; overflow: hidden;
+  }
+  .service-tile::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: var(--gold);
+    transform: scaleX(0); transition: var(--transition);
+  }
+  .service-tile:hover { background: rgba(200,150,12,0.07); }
+  .service-tile:hover::before { transform: scaleX(1); }
+  .service-tile:hover .st-icon { color: var(--gold); }
+  .st-icon { font-size: 28px; margin-bottom: 12px; transition: var(--transition); }
+  .st-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
+  }
+
+  /* ===================== SECTION COMMON ===================== */
+  .section { padding: 100px 40px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .section-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 12px; display: block;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px); font-weight: 900;
+    color: var(--navy); line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .section-title span { color: var(--gold); }
+  .section-body {
+    font-size: 16px; color: var(--gray-700);
+    line-height: 1.8; max-width: 640px;
+  }
+
+  /* ===================== ABOUT SECTION ===================== */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center; margin-top: 60px;
+  }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-wrap img {
+    width: 100%; height: 480px; object-fit: cover;
+    display: block;
+  }
+  .about-img-wrap::before {
+    content: ''; position: absolute;
+    top: -20px; left: -20px; right: 20px; bottom: 20px;
+    border: 2px solid var(--gold); z-index: -1;
+  }
+  .about-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--gold); padding: 24px;
+    text-align: center;
+  }
+  .about-badge .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px; font-weight: 900; color: var(--navy); line-height: 1;
+  }
+  .about-badge .lbl {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--navy-mid);
+    margin-top: 4px;
+  }
+  .values-list { margin-top: 36px; display: flex; flex-direction: column; gap: 16px; }
+  .value-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 16px 20px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    transition: var(--transition);
+  }
+  .value-item:hover { background: var(--gold-pale); transform: translateX(4px); }
+  .vi-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .vi-text h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--navy); margin-bottom: 2px;
+  }
+  .vi-text p { font-size: 13px; color: var(--gray-700); line-height: 1.5; }
+
+  /* ===================== PROJECTS ===================== */
+  #projects-page { padding-top: 70px; background: var(--gray-100); min-height: 100vh; }
+  .projects-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 80px 40px;
+    position: relative; overflow: hidden;
+  }
+  .projects-hero::after {
+    content: 'PROJECTS';
+    position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 140px; font-weight: 900; color: rgba(255,255,255,0.04);
+    pointer-events: none; white-space: nowrap;
+  }
+  .projects-hero .section-title { color: var(--white); }
+  .projects-hero .section-body { color: rgba(255,255,255,0.65); }
+
+  .projects-grid {
+    max-width: 1200px; margin: 60px auto; padding: 0 40px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 28px;
+  }
+  .project-card {
+    background: var(--white); overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+    transition: var(--transition);
+    position: relative;
+  }
+  .project-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.13); }
+  .pc-header {
+    background: var(--navy); padding: 24px 28px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .pc-type {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .pc-status {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .status-ongoing { background: rgba(46,125,50,0.25); color: #81c784; }
+  .status-completed { background: rgba(200,150,12,0.25); color: var(--gold-light); }
+  .pc-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700; color: var(--white);
+    margin-top: 10px; line-height: 1.3;
+  }
+  .pc-body { padding: 24px 28px; }
+  .pc-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .pc-tag {
+    font-size: 11px; background: var(--gray-100); color: var(--navy-mid);
+    padding: 4px 10px; font-weight: 600; letter-spacing: 0.5px;
+  }
+  .pc-desc { font-size: 14px; color: var(--gray-700); line-height: 1.7; }
+  .pc-client {
+    margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--gray-200);
+    font-size: 12px; color: var(--gray-500); display: flex; gap: 6px;
+  }
+  .pc-client strong { color: var(--navy-mid); }
+
+  /* ===================== SERVICES PAGE ===================== */
+  #services-page { padding-top: 70px; min-height: 100vh; }
+  .services-hero {
+    background:
+      linear-gradient(135deg, rgba(13,33,55,0.9) 0%, rgba(13,33,55,0.7) 100%),
+      url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1600&q=80') center/cover;
+    padding: 80px 40px;
+    position: relative;
+  }
+  .services-hero .section-title { color: var(--white); }
+  .services-hero .section-body { color: rgba(255,255,255,0.65); }
+
+  .services-grid {
+    max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2px; background: var(--gray-200);
+  }
+  .svc-card {
+    background: var(--white); padding: 48px 36px;
+    transition: var(--transition); cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .svc-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px; background: var(--gold); transform: scaleX(0);
+    transform-origin: left; transition: var(--transition);
+  }
+  .svc-card:hover { background: var(--navy); }
+  .svc-card:hover::after { transform: scaleX(1); }
+  .svc-card:hover .svc-icon { background: var(--gold); color: var(--navy); }
+  .svc-card:hover .svc-title { color: var(--white); }
+  .svc-card:hover .svc-desc { color: rgba(255,255,255,0.65); }
+  .svc-card:hover .svc-list li { color: rgba(255,255,255,0.6); }
+  .svc-card:hover .svc-list li::before { color: var(--gold); }
+  .svc-icon {
+    width: 56px; height: 56px; background: var(--gold-pale);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; margin-bottom: 24px;
+    transition: var(--transition);
+  }
+  .svc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; color: var(--navy);
+    margin-bottom: 14px; transition: var(--transition);
+  }
+  .svc-desc {
+    font-size: 14px; color: var(--gray-700); line-height: 1.7;
+    margin-bottom: 20px; transition: var(--transition);
+  }
+  .svc-list { list-style: none; padding: 0; }
+  .svc-list li {
+    font-size: 13px; color: var(--gray-700); padding: 5px 0;
+    padding-left: 16px; position: relative; transition: var(--transition);
+  }
+  .svc-list li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--gold); font-size: 11px; transition: var(--transition);
+  }
+
+  /* ===================== ABOUT PAGE ===================== */
+  #about-page { padding-top: 70px; min-height: 100vh; }
+  .about-page-hero {
+    background: var(--navy);
+    padding: 80px 40px; position: relative; overflow: hidden;
+  }
+  .about-page-hero::after {
+    content: '';
+    position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+    background: linear-gradient(135deg, transparent, rgba(200,150,12,0.08));
+  }
+  .about-page-hero .section-title { color: var(--white); }
+  .about-page-hero .section-body { color: rgba(255,255,255,0.65); }
+
+  .team-section { background: var(--cream); padding: 80px 40px; }
+  .team-card {
+    max-width: 500px; margin: 48px auto;
+    background: var(--white); overflow: hidden;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.1);
+    display: flex;
+  }
+  .team-accent { width: 8px; background: var(--gold); flex-shrink: 0; }
+  .team-info { padding: 40px; }
+  .team-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px; font-weight: 900; color: var(--navy); margin-bottom: 4px;
+  }
+  .team-role {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+  }
+  .team-bio { font-size: 15px; color: var(--gray-700); line-height: 1.7; }
+
+  .certs-section { padding: 80px 40px; }
+  .certs-grid {
+    max-width: 1200px; margin: 48px auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .cert-card {
+    padding: 36px; border: 1px solid var(--gray-200);
+    display: flex; gap: 20px; align-items: flex-start;
+    transition: var(--transition);
+  }
+  .cert-card:hover { border-color: var(--gold); background: var(--gold-pale); transform: translateY(-4px); }
+  .cert-badge {
+    width: 56px; height: 56px; background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0; color: var(--gold);
+  }
+  .cert-info h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--navy); margin-bottom: 6px;
+  }
+  .cert-info p { font-size: 13px; color: var(--gray-700); line-height: 1.5; }
+
+  /* ===================== CONTACT PAGE ===================== */
+  #contact-page { padding-top: 70px; min-height: 100vh; }
+  .contact-layout {
+    display: grid; grid-template-columns: 1fr 1fr.5; min-height: calc(100vh - 70px);
+  }
+  .contact-info {
+    background: var(--navy); padding: 80px 60px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .contact-info::before {
+    content: '';
+    position: absolute; bottom: -80px; right: -80px;
+    width: 300px; height: 300px;
+    border: 2px solid rgba(200,150,12,0.15);
+    border-radius: 50%;
+  }
+  .contact-info::after {
+    content: '';
+    position: absolute; bottom: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border: 2px solid rgba(200,150,12,0.1);
+    border-radius: 50%;
+  }
+  .contact-info .section-title { color: var(--white); }
+  .contact-info .section-body { color: rgba(255,255,255,0.6); font-size: 15px; }
+  .contact-items { margin-top: 48px; display: flex; flex-direction: column; gap: 28px; }
+  .contact-item { display: flex; gap: 20px; align-items: flex-start; }
+  .ci-icon {
+    width: 48px; height: 48px; background: rgba(200,150,12,0.12);
+    border: 1px solid rgba(200,150,12,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .ci-text h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+  }
+  .ci-text p { font-size: 15px; color: rgba(255,255,255,0.8); }
+  .ci-text a { color: rgba(255,255,255,0.8); text-decoration: none; }
+  .ci-text a:hover { color: var(--gold); }
+
+  .contact-form-wrap { padding: 80px 60px; background: var(--white); }
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 900; color: var(--navy); margin-bottom: 8px;
+  }
+  .form-sub { font-size: 15px; color: var(--gray-500); margin-bottom: 40px; }
+
+  .form-group { margin-bottom: 24px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--navy-mid);
+    display: block; margin-bottom: 8px;
+  }
+  input, select, textarea {
+    width: 100%; padding: 14px 16px;
+    border: 1px solid var(--gray-200);
+    font-family: 'Barlow', sans-serif; font-size: 15px;
+    color: var(--text); background: var(--gray-100);
+    outline: none; transition: var(--transition);
+    appearance: none; -webkit-appearance: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--gold); background: var(--white);
+    box-shadow: 0 0 0 3px rgba(200,150,12,0.1);
+  }
+  textarea { resize: vertical; min-height: 130px; }
+  .btn-submit {
+    background: var(--navy); color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 18px 48px;
+    border: none; cursor: pointer; width: 100%;
+    transition: var(--transition);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .btn-submit:hover { background: var(--gold); color: var(--navy); }
+  .form-success {
+    display: none; background: #e8f5e9; border-left: 4px solid #2e7d32;
+    padding: 16px 20px; margin-top: 20px; font-size: 14px; color: #2e7d32;
+  }
+
+  /* ===================== WORK PAGE ===================== */
+  #work-page { padding-top: 70px; min-height: 100vh; }
+  .work-hero {
+    background:
+      linear-gradient(135deg, rgba(13,33,55,0.88) 0%, rgba(27,58,92,0.9) 100%),
+      url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1600&q=80') center/cover;
+    padding: 80px 40px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .work-hero .section-title { color: var(--white); text-align: center; }
+  .work-hero .section-tag { text-align: center; display: block; }
+  .work-hero .section-body { color: rgba(255,255,255,0.65); margin: 0 auto 40px; text-align: center; }
+
+  .work-content { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
+  .work-intro-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    margin-bottom: 80px; align-items: start;
+  }
+  .work-benefits { }
+  .benefit-item {
+    display: flex; gap: 16px; padding: 20px 0;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .benefit-item:last-child { border-bottom: none; }
+  .bi-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 900; color: var(--gold-pale);
+    line-height: 1; flex-shrink: 0; min-width: 40px;
+  }
+  .bi-text h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--navy); margin-bottom: 4px;
+  }
+  .bi-text p { font-size: 13px; color: var(--gray-700); line-height: 1.6; }
+  .work-roles-wrap { }
+  .roles-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .role-tag {
+    display: inline-block; padding: 8px 16px; margin: 0 8px 8px 0;
+    background: var(--navy); color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; cursor: default;
+    transition: var(--transition);
+  }
+  .role-tag:hover { background: var(--gold); color: var(--navy); }
+
+  .work-form-wrap {
+    background: var(--navy); padding: 60px;
+    position: relative; overflow: hidden;
+  }
+  .work-form-wrap::before {
+    content: 'JOIN US';
+    position: absolute; right: -30px; top: 50%; transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 120px; font-weight: 900; color: rgba(255,255,255,0.03);
+    pointer-events: none;
+  }
+  .wf-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 900; color: var(--white); margin-bottom: 6px;
+  }
+  .wf-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 40px; }
+  .work-form-wrap label { color: rgba(255,255,255,0.6); }
+  .work-form-wrap input,
+  .work-form-wrap select,
+  .work-form-wrap textarea {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.1);
+    color: var(--white);
+  }
+  .work-form-wrap input:focus,
+  .work-form-wrap select:focus,
+  .work-form-wrap textarea:focus {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200,150,12,0.15);
+  }
+  .work-form-wrap input::placeholder,
+  .work-form-wrap textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .work-form-wrap select option { background: var(--navy); color: var(--white); }
+  .work-form-wrap .btn-submit { background: var(--gold); color: var(--navy); }
+  .work-form-wrap .btn-submit:hover { background: var(--gold-light); }
+
+  /* ===================== FOOTER ===================== */
+  footer {
+    background: #060f1a; padding: 60px 40px 30px;
+    border-top: 3px solid var(--gold);
+  }
+  .footer-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px; margin-bottom: 48px;
+  }
+  .footer-brand .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 900; color: var(--white); margin-bottom: 4px;
+  }
+  .footer-brand .tagline {
+    font-size: 12px; color: var(--gold); font-style: italic; margin-bottom: 20px;
+  }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    font-size: 13px; color: rgba(255,255,255,0.45);
+    text-decoration: none; transition: var(--transition);
+  }
+  .footer-col ul li a:hover { color: var(--gold); padding-left: 6px; }
+  .footer-col p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.8; }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+  /* ===================== ANIMATIONS ===================== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ===================== SCROLL TOP ===================== */
+  .scroll-top {
+    position: fixed; bottom: 28px; right: 28px; z-index: 900;
+    width: 44px; height: 44px; background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; cursor: pointer; opacity: 0;
+    transition: var(--transition); pointer-events: none;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    color: var(--navy);
+  }
+  .scroll-top.show { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { background: var(--gold-light); transform: translateY(-4px); }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 900px) {
+    .about-grid, .work-intro-grid, .contact-layout { grid-template-columns: 1fr; }
+    .contact-layout { min-height: auto; }
+    .services-strip { grid-template-columns: repeat(3, 1fr); }
+    .certs-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    nav { padding: 0 20px; }
+    .nav-links { gap: 0; }
+    .nav-links a { padding: 8px 8px; font-size: 11px; }
+    .hero-stats { gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    .section { padding: 60px 20px; }
+    .services-strip { grid-template-columns: 1fr 1fr; }
+    .certs-grid, .footer-grid { grid-template-columns: 1fr; }
+    .projects-grid { padding: 0 20px; }
+    .work-form-wrap, .contact-form-wrap, .contact-info { padding: 40px 24px; }
+    .hero-inner { padding: 60px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">
+    <span class="brand">V MORGEN & SOEHNE</span>
+    <span class="sub">Construction · Kenya</span>
+  </div>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('home')" class="active" id="nav-home">Home</a>
+    <a href="#" onclick="showPage('about')" id="nav-about">About</a>
+    <a href="#" onclick="showPage('services')" id="nav-services">Services</a>
+    <a href="#" onclick="showPage('projects')" id="nav-projects">Projects</a>
+    <a href="#" onclick="showPage('work')" id="nav-work">Need Work?</a>
+    <a href="#" onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</a>
+  </div>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="home-page" class="page active">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Nairobi, Kenya — Est. 2024</div>
+      <h1>Building Kenya's<em>Future</em></h1>
+      <p class="hero-sub">V MORGEN & SOEHNE LTD delivers precision-engineered residential, commercial, and civil infrastructure projects across Kenya — with German-inspired discipline and local expertise.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary" onclick="showPage('projects')">View Our Projects</a>
+        <a href="#" class="btn-secondary" onclick="showPage('contact')">Get a Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Regions Active</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="services-strip">
+    <div class="service-tile" onclick="showPage('services')">
+      <div class="st-icon">🏘️</div>
+      <div class="st-name">Residential</div>
+    </div>
+    <div class="service-tile" onclick="showPage('services')">
+      <div class="st-icon">🏢</div>
+      <div class="st-name">Commercial</div>
+    </div>
+    <div class="service-tile" onclick="showPage('services')">
+      <div class="st-icon">🛣️</div>
+      <div class="st-name">Civil Works</div>
+    </div>
+    <div class="service-tile" onclick="showPage('services')">
+      <div class="st-icon">🪵</div>
+      <div class="st-name">Flooring</div>
+    </div>
+    <div class="service-tile" onclick="showPage('services')">
+      <div class="st-icon">🔧</div>
+      <div class="st-name">Plumbing</div>
+    </div>
+  </div>
+
+  <!-- About Preview -->
+  <section class="section" style="background:var(--white);">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Construction site">
+          <div class="about-badge">
+            <div class="num">NCA8</div>
+            <div class="lbl">Registered</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <span class="section-tag">Who We Are</span>
+          <h2 class="section-title">Precision. <span>Integrity.</span> Quality.</h2>
+          <p class="section-body">V MORGEN & SOEHNE LTD is a fully registered construction company based in Nairobi, Kenya. We combine German-inspired precision with deep local expertise to deliver residential, commercial, and civil infrastructure projects that stand the test of time.</p>
+          <div class="values-list" style="margin-top:28px;">
+            <div class="value-item">
+              <div class="vi-icon">🏗️</div>
+              <div class="vi-text"><h4>Quality Craftsmanship</h4><p>Meticulous attention to detail on every build.</p></div>
+            </div>
+            <div class="value-item">
+              <div class="vi-icon">🌿</div>
+              <div class="vi-text"><h4>Sustainability</h4><p>NEMA-approved and committed to green building.</p></div>
+            </div>
+            <div class="value-item">
+              <div class="vi-icon">🤝</div>
+              <div class="vi-text"><h4>Client-Centered</h4><p>Every project shaped by your vision and goals.</p></div>
+            </div>
+          </div>
+          <div style="margin-top:32px;">
+            <a href="#" class="btn-primary" onclick="showPage('about')">Learn More About Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Preview -->
+  <section class="section" style="background:var(--gray-100);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:48px;" class="reveal">
+        <span class="section-tag">Our Work</span>
+        <h2 class="section-title" style="text-align:center;">Recent <span>Projects</span></h2>
+        <p class="section-body" style="margin:0 auto; text-align:center;">From civil infrastructure to intimate home renovations, every project reflects our commitment to quality and precision.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:24px;">
+        <div class="project-card reveal">
+          <div class="pc-header">
+            <div>
+              <div class="pc-type">Civil & Infrastructure</div>
+              <div class="pc-name">Ngong Road Overpass Kerbs</div>
+            </div>
+            <div class="pc-status status-ongoing">Ongoing</div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-meta">
+              <span class="pc-tag">📍 Nairobi</span>
+              <span class="pc-tag">🏗️ Subcontract</span>
+            </div>
+            <p class="pc-desc">Labor management, workmanship & quality control for kerbs and sidewalks on the Ngong Road overpass project.</p>
+            <div class="pc-client">Client: <strong>Centunion Construction Ltd</strong></div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="pc-header">
+            <div>
+              <div class="pc-type">Commercial</div>
+              <div class="pc-name">Yaya Centre Cabro Paving</div>
+            </div>
+            <div class="pc-status status-completed">Completed</div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-meta">
+              <span class="pc-tag">📍 Nairobi</span>
+              <span class="pc-tag">🚗 Parking & Walkways</span>
+            </div>
+            <p class="pc-desc">Cabro supply & fix, drainage, kerbs and road channels for Yaya Centre's parking and loading zone.</p>
+            <div class="pc-client">Client: <strong>ZJCC Company</strong></div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="pc-header">
+            <div>
+              <div class="pc-type">Residential</div>
+              <div class="pc-name">Naivasha Home Renovation</div>
+            </div>
+            <div class="pc-status status-completed">Completed</div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-meta">
+              <span class="pc-tag">📍 Naivasha</span>
+              <span class="pc-tag">🏡 Residential</span>
+            </div>
+            <p class="pc-desc">Full renovation including staircase relocation, repartitioning, lighting and construction finishing.</p>
+            <div class="pc-client">Client: <strong>Private Client</strong></div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="#" class="btn-primary" onclick="showPage('projects')">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section style="background:var(--navy); padding:80px 40px; text-align:center; position:relative; overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0; background: repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(200,150,12,0.03) 40px,rgba(200,150,12,0.03) 41px);"></div>
+    <div style="position:relative; z-index:1;" class="reveal">
+      <span class="section-tag" style="display:block; text-align:center;">Ready to Build?</span>
+      <h2 class="section-title" style="color:var(--white); text-align:center;">Let's Bring Your Project <span>to Life</span></h2>
+      <p style="color:rgba(255,255,255,0.55); max-width:500px; margin:0 auto 40px; font-size:16px; line-height:1.7;">Whether it's a residential renovation, commercial fit-out, or major civil works — we're ready to deliver.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="#" class="btn-primary" onclick="showPage('contact')">Get In Touch</a>
+        <a href="#" class="btn-secondary" onclick="showPage('work')">Looking for Work?</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div id="about-page" class="page">
+  <div class="about-page-hero">
+    <div class="container">
+      <span class="section-tag">Our Story</span>
+      <h1 class="section-title">About V MORGEN <span>&</span> SOEHNE</h1>
+      <p class="section-body">A newly established construction company built on experience, integrity, and an unwavering commitment to quality across Kenya.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal">
+          <span class="section-tag">Who We Are</span>
+          <h2 class="section-title">Building with <span>Purpose</span></h2>
+          <p class="section-body">V MORGEN & SOEHNE LTD is a dynamic construction company headquartered in Nairobi, Kenya. Though newly established, our team brings deep hands-on expertise across residential, commercial, and civil infrastructure projects.</p>
+          <p class="section-body" style="margin-top:16px;">Our name reflects a blend of vision — "Morgen" meaning tomorrow in German — and the spirit of family legacy in building Kenya's future structures together.</p>
+          <p class="section-body" style="margin-top:16px;">We operate across Nairobi & Central Kenya, the Rift Valley, and are expanding our footprint nationwide, combining technical precision with client-centred delivery on every project.</p>
+        </div>
+        <div class="reveal">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="Construction" style="width:100%; height:420px; object-fit:cover;">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:80px;" class="reveal">
+        <div style="padding:40px; background:var(--cream); border-left:4px solid var(--gold);">
+          <h3 style="font-family:'Playfair Display',serif; font-size:26px; color:var(--navy); margin-bottom:16px;">Our Mission</h3>
+          <p style="color:var(--gray-700); line-height:1.8; font-size:15px;">To deliver innovative, sustainable, and high-quality construction solutions that exceed client expectations while contributing to the development of Kenya's built environment.</p>
+        </div>
+        <div style="padding:40px; background:var(--navy); border-left:4px solid var(--gold);">
+          <h3 style="font-family:'Playfair Display',serif; font-size:26px; color:var(--white); margin-bottom:16px;">Our Vision</h3>
+          <p style="color:rgba(255,255,255,0.65); line-height:1.8; font-size:15px;">To be a leading construction company in East Africa, recognized for integrity, excellence, and transformative infrastructure that shapes communities for generations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container" style="text-align:center;">
+      <span class="section-tag">Leadership</span>
+      <h2 class="section-title">Meet the <span>Founder</span></h2>
+      <div class="team-card">
+        <div class="team-accent"></div>
+        <div class="team-info">
+          <div class="team-name">Vincent Kioko</div>
+          <div class="team-role">Founder & Director</div>
+          <p class="team-bio">Vincent Kioko is the visionary behind V MORGEN & SOEHNE LTD. With a hands-on background in construction management, civil works, and client relations, Vincent founded the company with the mission of delivering high-quality, dependable construction services across Kenya. He leads the company's strategic direction, project oversight, and client engagement — ensuring every project reflects the company's commitment to excellence, innovation, and integrity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="certs-section">
+    <div class="container">
+      <div style="text-align:center;" class="reveal">
+        <span class="section-tag">Compliance & Registration</span>
+        <h2 class="section-title">Certifications & <span>Registrations</span></h2>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card reveal">
+          <div class="cert-badge">📋</div>
+          <div class="cert-info">
+            <h4>BRS Registration</h4>
+            <p>Registered under the Business Registration Service (BRS), Kenya, with a valid Business Registration Certificate — fully compliant with Kenyan business law.</p>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge">🏗️</div>
+          <div class="cert-info">
+            <h4>NCA Category 8</h4>
+            <p>National Construction Authority (NCA) registered, Category NCA8 — authorizing the company to undertake construction works as defined under the NCA Act, Kenya.</p>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge">🌿</div>
+          <div class="cert-info">
+            <h4>NEMA Approved</h4>
+            <p>National Environment Management Authority (NEMA) environmental compliance approval — confirming our commitment to sustainable and environmentally responsible construction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--navy); padding:80px 40px;">
+    <div class="container">
+      <div style="text-align:center;" class="reveal">
+        <span class="section-tag">Core Values</span>
+        <h2 class="section-title" style="color:var(--white); text-align:center;">What Drives <span>Us</span></h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:2px; margin-top:48px; background:rgba(255,255,255,0.05);">
+        <div style="padding:36px 28px; background:var(--navy); text-align:center;" class="reveal">
+          <div style="font-size:36px; margin-bottom:16px;">🏗️</div>
+          <h4 style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px;">Quality</h4>
+          <p style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.6;">Meticulous craftsmanship on every project.</p>
+        </div>
+        <div style="padding:36px 28px; background:var(--navy); text-align:center;" class="reveal">
+          <div style="font-size:36px; margin-bottom:16px;">🕐</div>
+          <h4 style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px;">Timeliness</h4>
+          <p style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.6;">Delivering every milestone on schedule.</p>
+        </div>
+        <div style="padding:36px 28px; background:var(--navy); text-align:center;" class="reveal">
+          <div style="font-size:36px; margin-bottom:16px;">💡</div>
+          <h4 style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px;">Innovation</h4>
+          <p style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.6;">Creative design fused with functional engineering.</p>
+        </div>
+        <div style="padding:36px 28px; background:var(--navy); text-align:center;" class="reveal">
+          <div style="font-size:36px; margin-bottom:16px;">🌿</div>
+          <h4 style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px;">Sustainability</h4>
+          <p style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.6;">Green building practices at every stage.</p>
+        </div>
+        <div style="padding:36px 28px; background:var(--navy); text-align:center;" class="reveal">
+          <div style="font-size:36px; margin-bottom:16px;">🤝</div>
+          <h4 style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px;">Client Focus</h4>
+          <p style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.6;">Your vision is our blueprint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== SERVICES PAGE ===== -->
+<div id="services-page" class="page">
+  <div class="services-hero">
+    <div class="container">
+      <span class="section-tag">What We Offer</span>
+      <h1 class="section-title">Our <span>Services</span></h1>
+      <p class="section-body">Comprehensive construction solutions across residential, commercial, civil, and specialist trades — delivered with precision and care.</p>
+    </div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-icon">🏘️</div>
+      <div class="svc-title">Residential Construction & Renovation</div>
+      <p class="svc-desc">We handle all aspects of home building and renovation, from structural works to finishing touches — transforming spaces to match your vision.</p>
+      <ul class="svc-list">
+        <li>Staircase relocation & structural changes</li>
+        <li>Internal repartitioning & layout redesign</li>
+        <li>Lighting design & installation</li>
+        <li>Interior finishing & painting</li>
+        <li>New residential construction</li>
+      </ul>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🏢</div>
+      <div class="svc-title">Commercial Construction</div>
+      <p class="svc-desc">From commercial fit-outs to large-scale paving works, we deliver high-quality commercial solutions with minimal disruption to live environments.</p>
+      <ul class="svc-list">
+        <li>Cabro paving & surface installation</li>
+        <li>Parking areas, walkways & loading zones</li>
+        <li>Commercial fit-outs & renovations</li>
+        <li>Road channels & drainage systems</li>
+        <li>Kerb installation & landscape works</li>
+      </ul>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🛣️</div>
+      <div class="svc-title">Civil & Infrastructure Works</div>
+      <p class="svc-desc">Specializing in civil construction including overpass works, road infrastructure, drainage, and kerbing — as both main contractor and specialist subcontractor.</p>
+      <ul class="svc-list">
+        <li>Kerbs, sidewalks & overpass structures</li>
+        <li>Labor management & quality control</li>
+        <li>Drainage & stormwater systems</li>
+        <li>Site supervision & works management</li>
+        <li>Civil subcontracting services</li>
+      </ul>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🪵</div>
+      <div class="svc-title">Flooring & Finishing Works</div>
+      <p class="svc-desc">Top-quality flooring restoration and finishing — from slab block installation to full interior repaints — revitalizing spaces to modern standards.</p>
+      <ul class="svc-list">
+        <li>Slab block & concrete floor installation</li>
+        <li>Floor restoration & repairs</li>
+        <li>Plastering & skimming</li>
+        <li>Interior & exterior painting</li>
+        <li>Institutional & residential finishes</li>
+      </ul>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🔧</div>
+      <div class="svc-title">Plumbing & Water Services</div>
+      <p class="svc-desc">Comprehensive plumbing installations for residential, commercial, and institutional clients — from water supply to appliance fitting.</p>
+      <ul class="svc-list">
+        <li>Drinking water connection & piping</li>
+        <li>Drainage & wastewater systems</li>
+        <li>Washing machine & appliance supply & install</li>
+        <li>Sanitary ware & bathroom fitting</li>
+        <li>Plumbing repairs & maintenance</li>
+      </ul>
+    </div>
+    <div class="svc-card reveal" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--cream);">
+      <div style="font-size:48px; margin-bottom:20px;">📞</div>
+      <div class="svc-title" style="color:var(--navy);">Have a Project?</div>
+      <p class="svc-desc" style="color:var(--gray-700);">Get in touch and let us put together a tailored solution for your construction needs.</p>
+      <a href="#" class="btn-primary" onclick="showPage('contact')" style="margin-top:20px;">Request a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROJECTS PAGE ===== -->
+<div id="projects-page" class="page">
+  <div class="projects-hero">
+    <div class="container">
+      <span class="section-tag">Our Portfolio</span>
+      <h1 class="section-title">Our <span>Projects</span></h1>
+      <p class="section-body">A showcase of our completed and ongoing work — from civil infrastructure to intimate residential renovations.</p>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="pc-header">
+        <div>
+          <div class="pc-type">Civil & Infrastructure</div>
+          <div class="pc-name">Kerbs & Sidewalks — Ngong Road Overpass</div>
+        </div>
+        <div class="pc-status status-ongoing">Ongoing</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-meta">
+          <span class="pc-tag">📍 Ngong Road, Nairobi</span>
+          <span class="pc-tag">📅 Ending May 2026</span>
+        </div>
+        <p class="pc-desc">Management of labor, workmanship, and quality control for kerbs and sidewalk works as part of a large overpass construction project along Ngong Road. Responsible for ensuring all civil works meet project specifications and safety standards.</p>
+        <div class="pc-client">Client: <strong>Centunion Construction Ltd</strong> &nbsp;|&nbsp; Role: Subcontractor</div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="pc-header">
+        <div>
+          <div class="pc-type">Commercial Construction</div>
+          <div class="pc-name">Cabro Supply & Fix — Yaya Centre</div>
+        </div>
+        <div class="pc-status status-completed">Completed</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-meta">
+          <span class="pc-tag">📍 Yaya Centre, Nairobi</span>
+          <span class="pc-tag">📅 May – June 2025</span>
+        </div>
+        <p class="pc-desc">Installation of cabro paving, drainage channels, kerbs, and road channels across a large cab parking area, pedestrian walkway, and loading zone for Yaya Centre — delivered within a tight commercial deadline.</p>
+        <div class="pc-client">Client: <strong>ZJCC Company</strong> &nbsp;|&nbsp; Role: Subcontractor</div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="pc-header">
+        <div>
+          <div class="pc-type">Residential Renovation</div>
+          <div class="pc-name">Private Home Renovation — Naivasha</div>
+        </div>
+        <div class="pc-status status-completed">Completed</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-meta">
+          <span class="pc-tag">📍 Naivasha, Rift Valley</span>
+          <span class="pc-tag">📅 Dec 2024 – Jul 2025</span>
+        </div>
+        <p class="pc-desc">Full renovation of a single-storey residential home including staircase relocation, internal repartitioning, lighting upgrades, and construction finishing works. Transformed the layout for improved functionality and aesthetic appeal.</p>
+        <div class="pc-client">Client: <strong>Mr. Wahome</strong> &nbsp;|&nbsp; Private Client</div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="pc-header">
+        <div>
+          <div class="pc-type">Flooring & Finishing</div>
+          <div class="pc-name">Flooring Restoration — Community Baptist Church</div>
+        </div>
+        <div class="pc-status status-completed">Completed</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-meta">
+          <span class="pc-tag">📍 Kamakis, Ruiru</span>
+          <span class="pc-tag">📅 Nov 2025 – Apr 2026</span>
+        </div>
+        <p class="pc-desc">Complete flooring restoration including slab block installation, concrete works, labor management, plastering, and full interior repainting. Revitalized the worship space with a clean, durable, and modern finish.</p>
+        <div class="pc-client">Client: <strong>Community Baptist Church</strong></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="pc-header">
+        <div>
+          <div class="pc-type">Plumbing & Water Services</div>
+          <div class="pc-name">Plumbing Installations — Multiple Clients</div>
+        </div>
+        <div class="pc-status status-ongoing">Ongoing</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-meta">
+          <span class="pc-tag">📍 Nairobi & Surroundings</span>
+          <span class="pc-tag">📅 Ongoing</span>
+        </div>
+        <p class="pc-desc">Supply and installation of plumbing services for multiple clients including drinking water connections, drainage systems, and appliance installations (washing machines, sanitary fittings) for institutional and residential clients.</p>
+        <div class="pc-client">Clients: <strong>Community Baptist Church, Private Residences</strong></div>
+      </div>
+    </div>
+
+    <div class="project-card" style="background:var(--navy); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:48px 36px; min-height:300px;">
+      <div style="font-size:48px; margin-bottom:20px;">🤝</div>
+      <div style="font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--white); margin-bottom:12px;">Your Project Could Be Here</div>
+      <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7; margin-bottom:24px;">We're actively taking on new projects across residential, commercial, and civil works.</p>
+      <a href="#" class="btn-primary" onclick="showPage('contact')">Start a Conversation</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTACT PAGE ===== -->
+<div id="contact-page" class="page">
+  <div class="contact-layout">
+    <div class="contact-info">
+      <span class="section-tag">Reach Out</span>
+      <h1 class="section-title">Get In <span>Touch</span></h1>
+      <p class="section-body">Ready to start your project? Have a question? We'd love to hear from you. Reach us through any channel below.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div class="ci-text">
+            <h4>Location</h4>
+            <p>Nairobi, Kenya</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div class="ci-text">
+            <h4>Phone</h4>
+            <p><a href="tel:+254703618918">+254 703 618 918</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">✉️</div>
+          <div class="ci-text">
+            <h4>Email</h4>
+            <p><a href="mailto:kiokovincent12@gmail.com">kiokovincent12@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🌐</div>
+          <div class="ci-text">
+            <h4>Website</h4>
+            <p><a href="https://www.vmorgen.com" target="_blank">www.vmorgen.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🎵</div>
+          <div class="ci-text">
+            <h4>TikTok</h4>
+            <p><a href="https://tiktok.com/@v_morgen_ltd" target="_blank">@v_morgen_ltd</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <div class="form-title">Send Us a Message</div>
+      <div class="form-sub">We typically respond within 24 hours on business days.</div>
+      <form id="contactForm" onsubmit="submitForm(event,'contactForm','contactSuccess')">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" placeholder="+254 700 000 000" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Project Type *</label>
+          <select required>
+            <option value="" disabled selected>Select project type</option>
+            <option>Residential Construction / Renovation</option>
+            <option>Commercial Construction</option>
+            <option>Civil & Infrastructure</option>
+            <option>Flooring & Finishing</option>
+            <option>Plumbing & Water Services</option>
+            <option>Other / Multiple Services</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Project Location</label>
+          <input type="text" placeholder="Nairobi, Mombasa, etc.">
+        </div>
+        <div class="form-group">
+          <label>Message / Project Details *</label>
+          <textarea placeholder="Tell us about your project — scope, timeline, budget range, or any questions you have..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+        <div class="form-success" id="contactSuccess">
+          ✅ Thank you! Your message has been received. We'll get back to you shortly.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NEED WORK PAGE ===== -->
+<div id="work-page" class="page">
+  <div class="work-hero">
+    <div class="container">
+      <span class="section-tag">Join Our Team</span>
+      <h1 class="section-title">Need <span>Work?</span></h1>
+      <p class="section-body">V MORGEN & SOEHNE LTD is always looking for skilled and motivated individuals to join our projects. Express your interest and we'll reach out when opportunities arise.</p>
+      <a href="#work-form" class="btn-primary" onclick="document.getElementById('work-form').scrollIntoView({behavior:'smooth'})">Apply Now</a>
+    </div>
+  </div>
+
+  <div class="work-content">
+    <div class="work-intro-grid">
+      <div class="reveal">
+        <span class="section-tag">Why Join Us</span>
+        <h2 class="section-title">Work on <span>Real Projects</span></h2>
+        <div class="benefit-item">
+          <div class="bi-num">01</div>
+          <div class="bi-text">
+            <h4>Active Project Pipeline</h4>
+            <p>We work on ongoing civil, residential, and commercial projects across Nairobi & Rift Valley — steady work opportunities.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="bi-num">02</div>
+          <div class="bi-text">
+            <h4>Fair Compensation</h4>
+            <p>We pay competitively for skilled labor and believe every worker deserves fair wages for quality work.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="bi-num">03</div>
+          <div class="bi-text">
+            <h4>Skill Development</h4>
+            <p>Work alongside experienced professionals and grow your craft in real construction environments.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="bi-num">04</div>
+          <div class="bi-text">
+            <h4>Safe Work Environment</h4>
+            <p>We prioritize site safety and responsible working conditions on every project we undertake.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="roles-title">We Often Need</div>
+        <div>
+          <span class="role-tag">Mason / Fundi</span>
+          <span class="role-tag">Concrete Laborer</span>
+          <span class="role-tag">Plumber</span>
+          <span class="role-tag">Cabro Layer</span>
+          <span class="role-tag">Painter</span>
+          <span class="role-tag">Plasterer</span>
+          <span class="role-tag">Site Foreman</span>
+          <span class="role-tag">Casual Laborer</span>
+          <span class="role-tag">Carpenter</span>
+          <span class="role-tag">Tile Fixer</span>
+          <span class="role-tag">Steel Fixer</span>
+          <span class="role-tag">General Handyman</span>
+          <span class="role-tag">Electrician</span>
+          <span class="role-tag">Waterproofing Expert</span>
+          <span class="role-tag">Drainage Specialist</span>
+        </div>
+
+        <div style="margin-top:40px; padding:28px; background:var(--cream); border-left:4px solid var(--gold);">
+          <h4 style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--navy); margin-bottom:10px;">📌 Note</h4>
+          <p style="font-size:14px; color:var(--gray-700); line-height:1.7;">Submitting your details does not guarantee immediate placement. We review all applications and contact suitable candidates when project needs arise. Both experienced tradespeople and general laborers are welcome to apply.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-form-wrap" id="work-form">
+      <div class="wf-title">Express Your Interest</div>
+      <div class="wf-sub">Fill in your details below and we'll reach out when a suitable opportunity comes up.</div>
+      <form id="workForm" onsubmit="submitForm(event,'workForm','workSuccess')">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" placeholder="+254 700 000 000" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Current Location / Town *</label>
+            <input type="text" placeholder="e.g. Nairobi, Thika, Naivasha" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Trade / Skill *</label>
+            <select required>
+              <option value="" disabled selected>Select your primary skill</option>
+              <option>Mason / Fundi</option>
+              <option>Concrete / Civil Laborer</option>
+              <option>Plumber</option>
+              <option>Cabro / Paving Layer</option>
+              <option>Painter</option>
+              <option>Plasterer</option>
+              <option>Site Foreman / Supervisor</option>
+              <option>Casual General Laborer</option>
+              <option>Carpenter</option>
+              <option>Tile Fixer</option>
+              <option>Steel Fixer / Reinforcement</option>
+              <option>Electrician</option>
+              <option>Drainage / Waterproofing</option>
+              <option>Other — I'll explain below</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Years of Experience *</label>
+            <select required>
+              <option value="" disabled selected>Select experience level</option>
+              <option>No experience — willing to learn</option>
+              <option>Less than 1 year</option>
+              <option>1–3 years</option>
+              <option>3–5 years</option>
+              <option>5–10 years</option>
+              <option>10+ years</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Availability *</label>
+          <select required>
+            <option value="" disabled selected>When can you start?</option>
+            <option>Immediately available</option>
+            <option>Available within 1 week</option>
+            <option>Available within 2 weeks</option>
+            <option>Available next month</option>
+            <option>Flexible / Project dependent</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell Us About Yourself</label>
+          <textarea placeholder="Briefly describe your experience, past projects you've worked on, any special skills or tools you work with, and why you'd like to work with V MORGEN & SOEHNE LTD..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Submit Application</button>
+        <div class="form-success" id="workSuccess" style="background:rgba(46,125,50,0.15); border-color:#81c784; color:#81c784;">
+          ✅ Application submitted! We've received your details and will be in touch when a suitable opportunity comes up. Thank you for your interest.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER (shown on all pages) -->
+<footer id="mainFooter">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand">V MORGEN & SOEHNE LTD</div>
+      <div class="tagline">Building Kenya's Future, One Structure at a Time</div>
+      <p>A fully registered construction company based in Nairobi, Kenya — delivering residential, commercial, and civil infrastructure projects with precision and integrity.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+        <li><a href="#" onclick="showPage('services')">Services</a></li>
+        <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+        <li><a href="#" onclick="showPage('work')">Need Work?</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('services')">Residential</a></li>
+        <li><a href="#" onclick="showPage('services')">Commercial</a></li>
+        <li><a href="#" onclick="showPage('services')">Civil Works</a></li>
+        <li><a href="#" onclick="showPage('services')">Flooring</a></li>
+        <li><a href="#" onclick="showPage('services')">Plumbing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>
+        📍 Nairobi, Kenya<br><br>
+        📞 <a href="tel:+254703618918" style="color:rgba(255,255,255,0.45); text-decoration:none;">+254 703 618 918</a><br><br>
+        ✉️ <a href="mailto:kiokovincent12@gmail.com" style="color:rgba(255,255,255,0.45); text-decoration:none; font-size:12px;">kiokovincent12@gmail.com</a><br><br>
+        🌐 <a href="https://www.vmorgen.com" style="color:rgba(255,255,255,0.45); text-decoration:none;">www.vmorgen.com</a><br><br>
+        🎵 <a href="https://tiktok.com/@v_morgen_ltd" style="color:rgba(255,255,255,0.45); text-decoration:none;">@v_morgen_ltd</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 V MORGEN & SOEHNE LTD. All rights reserved. | NCA8 Registered | BRS Certified | NEMA Approved</p>
+    <p style="color:rgba(255,255,255,0.2); font-size:11px;">Nairobi, Kenya</p>
+  </div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id + '-page').classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('nav-' + id)?.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    triggerReveal();
+    return false;
+  }
+
+  function submitForm(e, formId, successId) {
+    e.preventDefault();
+    const success = document.getElementById(successId);
+    success.style.display = 'block';
+    document.getElementById(formId).reset();
+    setTimeout(() => { success.style.display = 'none'; }, 6000);
+  }
+
+  // Scroll reveal
+  function triggerReveal() {
+    setTimeout(() => {
+      const els = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('visible'), i * 80);
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(el => { el.classList.remove('visible'); observer.observe(el); });
+    }, 50);
+  }
+
+  // Scroll top button
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTop');
+    btn.classList.toggle('show', window.scrollY > 400);
+  });
+
+  triggerReveal();
+</script>
+</body>
+</html>
