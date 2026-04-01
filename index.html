@@ -478,7 +478,7 @@
   }
   .contact-info .section-title { color: var(--white); }
   .contact-info .section-body { color: rgba(255,255,255,0.6); font-size: 15px; }
-  .contact-items { margin-top: 48px; display: flex; flex-direction: column; gap: 28px; }
+  .contact-items { margin-top: 48px; display: flex; flex-direction: row; gap: 28px; }
   .contact-item { display: flex; gap: 20px; align-items: flex-start; }
   .ci-icon {
     width: 48px; height: 48px; background: rgba(200,150,12,0.12);
@@ -1187,7 +1187,7 @@
           <span class="pc-tag">📅 Nov 2025 – Apr 2026</span>
         </div>
         <p class="pc-desc">Complete flooring restoration including slab block installation, concrete works, labor management, plastering, and full interior repainting. Revitalized the worship space with a clean, durable, and modern finish.</p>
-        <div class="pc-client">Client: <strong>Community Baptist Church</strong></div>
+        <div class="pc-client">Client: <strong>Community Baptist Church</strong> &nbsp;|&nbsp; CBO</div>
       </div>
     </div>
 
@@ -1221,7 +1221,8 @@
 <!-- ===== CONTACT PAGE ===== -->
 <div id="contact-page" class="page">
   <div class="contact-layout">
-    <div class="contact-info">
+    <div class="contact-info ">
+      <div class="container">
       <span class="section-tag">Reach Out</span>
       <h1 class="section-title">Get In <span>Touch</span></h1>
       <p class="section-body">Ready to start your project? Have a question? We'd love to hear from you. Reach us through any channel below.</p>
@@ -1262,9 +1263,11 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
 
     <div class="contact-form-wrap">
+      <div class="container">
       <div class="form-title">Send Us a Message</div>
       <div class="form-sub">We typically respond within 24 hours on business days.</div>
       <form id="contactForm" onsubmit="submitForm(event,'contactForm','contactSuccess')">
@@ -1307,6 +1310,7 @@
           ✅ Thank you! Your message has been received. We'll get back to you shortly.
         </div>
       </form>
+    </div>
     </div>
   </div>
 </div>
