@@ -106,7 +106,7 @@
     );
   }
   .hero-inner {
-    max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+    max-width: 1800px; margin: 0 auto; padding: 80px 40px;
     position: relative; z-index: 1;
   }
   .hero-tag {
@@ -129,9 +129,78 @@
   }
   .hero-sub {
     font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.75);
-    max-width: 540px; margin: 28px 0 44px;
+    max-width: 1000px; margin: 28px 0 24px;
     line-height: 1.7; animation: fadeUp 0.8s 0.3s ease both;
   }
+  .hero-announcement {
+    margin: 0 0 28px;
+    max-width: 700px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(200,150,12,0.35);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 14px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+  .hero-announcement::before {
+    content: '';
+    position: absolute;
+    top: -30px; left: -30px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(200,150,12,0.35), rgba(200,150,12,0));
+    transform: rotate(-12deg);
+    pointer-events: none;
+  }
+  .ha-icon {
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    font-size: 18px;
+    background: rgba(200,150,12,0.18);
+    border: 1px solid rgba(200,150,12,0.35);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+    position: relative;
+    z-index: 1;
+  }
+  .ha-kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.78);
+    position: relative;
+    z-index: 1;
+  }
+  .ha-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    margin-top: 4px;
+  }
+  .ha-brand {
+    color: var(--gold);
+  }
+  .ha-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.55;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .ha-text { grid-column: 2; position: relative; z-index: 1; }
   .hero-btns {
     display: flex; gap: 16px; flex-wrap: wrap;
     animation: fadeUp 0.8s 0.45s ease both;
@@ -556,7 +625,6 @@
     display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
     margin-bottom: 80px; align-items: start;
   }
-  .work-benefits { }
   .benefit-item {
     display: flex; gap: 16px; padding: 20px 0;
     border-bottom: 1px solid var(--gray-200);
@@ -573,7 +641,6 @@
     text-transform: uppercase; color: var(--navy); margin-bottom: 4px;
   }
   .bi-text p { font-size: 13px; color: var(--gray-700); line-height: 1.6; }
-  .work-roles-wrap { }
   .roles-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 12px; font-weight: 700; letter-spacing: 3px;
@@ -709,6 +776,15 @@
     .projects-grid { padding: 0 20px; }
     .work-form-wrap, .contact-form-wrap, .contact-info { padding: 40px 24px; }
     .hero-inner { padding: 60px 20px; }
+    .hero-announcement { grid-template-columns: 1fr; gap: 12px; }
+    .ha-text { grid-column: 1; }
+    .ha-icon { justify-self: start; }
+  }
+
+  .pc-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 </style>
 </head>
@@ -716,7 +792,7 @@
 
 <!-- NAV -->
 <nav id="mainNav">
-  <div class="nav-logo">
+  <div class="nav-logo" onclick="showPage('home')" style="cursor: pointer;">
     <span class="brand">V MORGEN & SOEHNE</span>
     <span class="sub">Construction · Kenya</span>
   </div>
@@ -736,8 +812,17 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-tag">Nairobi, Kenya — Est. 2024</div>
+      <div class="hero-announcement" role="status" aria-live="polite">
+        <div class="ha-icon" aria-hidden="true">📣</div>
+        <div class="ha-text">
+          <div class="ha-kicker">Announcement</div>
+          <div class="ha-title" style="letter-spacing: 2px;"><a href="https://unatum.online" target="_blank" style="font-weight: 700; color: red; text-decoration: underline;">UNATUM SERVICES</a> Becomes <span class="ha-brand">V MORGEN &amp; SOEHNE LTD</span></div>
+          <div class="ha-desc">We are changing For You. Just a better capability to serve you—across every project.</div>
+        </div>
+      </div>
       <h1>Building Kenya's<em>Future</em></h1>
       <p class="hero-sub">V MORGEN & SOEHNE LTD delivers precision-engineered residential, commercial, and civil infrastructure projects across Kenya — with German-inspired discipline and local expertise.</p>
+      
       <div class="hero-btns">
         <a href="#" class="btn-primary" onclick="showPage('projects')">View Our Projects</a>
         <a href="#" class="btn-secondary" onclick="showPage('contact')">Get a Quote</a>
@@ -793,7 +878,7 @@
         <div class="about-img-wrap reveal">
           <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Construction site">
           <div class="about-badge">
-            <div class="num">NCA8</div>
+            <div class="num">NCA7</div>
             <div class="lbl">Registered</div>
           </div>
         </div>
@@ -840,6 +925,9 @@
             </div>
             <div class="pc-status status-ongoing">Ongoing</div>
           </div>
+          <div class="pc-image">
+            <img src="images/ngongmain.jpeg" alt="Ngong Road Overpass Kerbs">
+          </div>
           <div class="pc-body">
             <div class="pc-meta">
               <span class="pc-tag">📍 Nairobi</span>
@@ -857,6 +945,9 @@
             </div>
             <div class="pc-status status-completed">Completed</div>
           </div>
+          <div class="pc-image">
+            <img src="images/yaya2.jpeg" alt="Yaya Centre Cabro Paving">
+          </div>
           <div class="pc-body">
             <div class="pc-meta">
               <span class="pc-tag">📍 Nairobi</span>
@@ -869,18 +960,21 @@
         <div class="project-card reveal">
           <div class="pc-header">
             <div>
-              <div class="pc-type">Residential</div>
-              <div class="pc-name">Naivasha Home Renovation</div>
+              <div class="pc-type">Non Profit & NGO</div>
+              <div class="pc-name">Community Baptist Church</div>
             </div>
             <div class="pc-status status-completed">Completed</div>
           </div>
+          <div class="pc-image">
+            <img src="images/cbc1.jpg" alt="Community Baptist Church">
+          </div>
           <div class="pc-body">
             <div class="pc-meta">
-              <span class="pc-tag">📍 Naivasha</span>
-              <span class="pc-tag">🏡 Residential</span>
+              <span class="pc-tag">📍 Ruiru, Nairobi</span>
+              <span class="pc-tag">🏡 Non Profit & NGO</span>
             </div>
-            <p class="pc-desc">Full renovation including staircase relocation, repartitioning, lighting and construction finishing.</p>
-            <div class="pc-client">Client: <strong>Private Client</strong></div>
+            <p class="pc-desc">Complete flooring restoration including slab block installation, concrete works, labor management, plastering, and full interior repainting.</p>
+            <div class="pc-client">Client: <strong>Community Baptist Church</strong></div>
           </div>
         </div>
       </div>
@@ -977,7 +1071,7 @@
           <div class="cert-badge">🏗️</div>
           <div class="cert-info">
             <h4>NCA Category 8</h4>
-            <p>National Construction Authority (NCA) registered, Category NCA8 — authorizing the company to undertake construction works as defined under the NCA Act, Kenya.</p>
+            <p>National Construction Authority (NCA) registered, Category NCA7 — authorizing the company to undertake construction works as defined under the NCA Act, Kenya.</p>
           </div>
         </div>
         <div class="cert-card reveal">
