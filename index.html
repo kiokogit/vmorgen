@@ -93,7 +93,7 @@
     min-height: calc(100vh - 70px);
     background:
       linear-gradient(135deg, rgba(13,33,55,0.93) 0%, rgba(13,33,55,0.75) 50%, rgba(200,150,12,0.15) 100%),
-      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center/cover no-repeat;
+      url('images/ngongCover.jpeg?w=1600&q=80') center/cover no-repeat;
     display: flex; align-items: center;
     position: relative; overflow: hidden;
   }
@@ -786,6 +786,202 @@
     height: 100%;
     object-fit: cover;
   }
+  /* ==========================================
+   PREMIUM PROJECT SHOWCASE
+========================================== */
+
+.projects-preview-premium{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at top left,#1b3a5c 0%,transparent 35%),
+    radial-gradient(circle at bottom right,rgba(200,150,12,.15),transparent 40%),
+    linear-gradient(180deg,#08121f 0%,#0d2137 100%);
+}
+
+.projects-preview-premium::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size:40px 40px;
+  opacity:.35;
+  animation:particlesFloat 20s linear infinite;
+}
+
+@keyframes particlesFloat{
+  from{transform:translateY(0);}
+  to{transform:translateY(-120px);}
+}
+
+.project-showcase{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:80px;
+  align-items:center;
+  min-height:85vh;
+  max-width:1500px;
+  margin:auto;
+  padding:140px 60px;
+  z-index:2;
+}
+
+.project-showcase.reverse{
+  grid-template-columns:1fr 1.1fr;
+}
+
+.project-showcase.reverse .project-media{
+  order:2;
+}
+
+.project-showcase.reverse .project-content{
+  order:1;
+}
+
+.project-media{
+  position:relative;
+}
+
+.project-media::before{
+  content:'';
+  position:absolute;
+  inset:-25px;
+  background:
+      linear-gradient(
+      135deg,
+      rgba(200,150,12,.25),
+      rgba(255,255,255,.03)
+      );
+  border-radius:40px;
+  filter:blur(25px);
+  z-index:-1;
+}
+
+.project-media img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:32px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.45),
+    0 0 0 1px rgba(255,255,255,.08);
+  transition:.8s ease;
+}
+
+.project-showcase:hover img{
+  transform:scale(1.03);
+}
+
+.project-content{
+  position:relative;
+  padding:50px;
+  border-radius:32px;
+  backdrop-filter:blur(18px);
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.project-number{
+  font-family:'Playfair Display',serif;
+  font-size:120px;
+  line-height:1;
+  font-weight:900;
+  color:rgba(200,150,12,.15);
+  position:absolute;
+  top:-35px;
+  right:25px;
+}
+
+.project-category{
+  color:var(--gold);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+.project-title{
+  font-family:'Playfair Display',serif;
+  color:white;
+  font-size:52px;
+  line-height:1.05;
+  margin:18px 0 24px;
+}
+
+.project-description{
+  color:rgba(255,255,255,.75);
+  font-size:17px;
+  line-height:1.9;
+  margin-bottom:30px;
+}
+
+.project-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:28px;
+}
+
+.project-pill{
+  padding:10px 18px;
+  border-radius:50px;
+  background:rgba(255,255,255,.06);
+  color:white;
+  font-size:13px;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.project-client{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:22px;
+  color:rgba(255,255,255,.7);
+}
+
+.project-client strong{
+  color:var(--gold);
+}
+
+.project-divider{
+  height:1px;
+  max-width:1400px;
+  margin:auto;
+  background:linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.15),
+      transparent
+  );
+}
+
+@media(max-width:1000px){
+
+  .project-showcase,
+  .project-showcase.reverse{
+      grid-template-columns:1fr;
+      gap:40px;
+      padding:90px 24px;
+  }
+
+  .project-showcase.reverse .project-media,
+  .project-showcase.reverse .project-content{
+      order:unset;
+  }
+
+  .project-media img{
+      height:300px;
+  }
+
+  .project-title{
+      font-size:38px;
+  }
+
+  .project-number{
+      font-size:70px;
+  }
+}
 </style>
 </head>
 <body>
@@ -793,15 +989,15 @@
 <!-- NAV -->
 <nav id="mainNav">
   <div class="nav-logo" onclick="showPage('home')" style="cursor: pointer;">
-    <span class="brand">WÉNSẼN CONSTRUCTION COMPANY</span>
+    <span class="brand">WÉNSĒN</span>
     <span class="sub">Construction · Kenya</span>
   </div>
   <div class="nav-links">
     <a href="#" onclick="showPage('home')" class="active" id="nav-home">Home</a>
     <a href="#" onclick="showPage('about')" id="nav-about">About</a>
     <a href="#" onclick="showPage('services')" id="nav-services">Services</a>
-    <a href="#" onclick="showPage('projects')" id="nav-projects">Projects</a>
-    <a href="#" onclick="showPage('work')" id="nav-work">Need Work?</a>
+    <!-- <a href="#" onclick="showPage('projects')" id="nav-projects">Projects</a> -->
+    <!-- <a href="#" onclick="showPage('work')" id="nav-work">Need Work?</a> -->
     <a href="#" onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</a>
   </div>
 </nav>
@@ -813,7 +1009,7 @@
     <div class="hero-inner">
       <div class="hero-tag">Nairobi, Kenya — Est. 2024</div>
       <h1>Building Kenya's<em>Future</em></h1>
-      <p class="hero-sub">WÉNSẼN CONSTRUCTION COMPANY LTD delivers precision-engineered residential, commercial, and civil infrastructure projects across Kenya — with German-inspired discipline and local expertise.</p>
+      <p class="hero-sub">WÉNSĒN CONSTRUCTION COMPANY LTD delivers precision-engineered residential, commercial, and civil infrastructure projects across Kenya — with discipline and local expertise.</p>
       
       <div class="hero-btns">
         <a href="#" class="btn-primary" onclick="showPage('projects')">View Our Projects</a>
@@ -868,7 +1064,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-img-wrap reveal">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Construction site">
+          <img src="images/main2.jpeg" alt="Construction site">
           <div class="about-badge">
             <div class="num">NCA7</div>
             <div class="lbl">Registered</div>
@@ -877,7 +1073,7 @@
         <div class="reveal">
           <span class="section-tag">Who We Are</span>
           <h2 class="section-title">Precision. <span>Integrity.</span> Quality.</h2>
-          <p class="section-body">WÉNSẼN CONSTRUCTION COMPANY LTD is a fully registered construction company based in Nairobi, Kenya. We combine German-inspired precision with deep local expertise to deliver residential, commercial, and civil infrastructure projects that stand the test of time.</p>
+          <p class="section-body">WÉNSĒN CONSTRUCTION COMPANY LTD is a fully registered construction company based in Nairobi, Kenya. We combine German-inspired precision with deep local expertise to deliver residential, commercial, and civil infrastructure projects that stand the test of time.</p>
           <div class="values-list" style="margin-top:28px;">
             <div class="value-item">
               <div class="vi-icon">🏗️</div>
@@ -901,81 +1097,146 @@
   </section>
 
   <!-- Projects Preview -->
-  <section class="section" style="background:var(--gray-100);">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:48px;" class="reveal">
-        <span class="section-tag">Our Work</span>
-        <h2 class="section-title" style="text-align:center;">Recent <span>Projects</span></h2>
-        <p class="section-body" style="margin:0 auto; text-align:center;">From civil infrastructure to intimate home renovations, every project reflects our commitment to quality and precision.</p>
-      </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:24px;">
-        <div class="project-card reveal">
-          <div class="pc-header">
-            <div>
-              <div class="pc-type">Civil & Infrastructure</div>
-              <div class="pc-name">Ngong Road Overpass Kerbs</div>
-            </div>
-            <div class="pc-status status-ongoing">Ongoing</div>
-          </div>
-          <div class="pc-image">
-            <img src="images/ngongmain.jpeg" alt="Ngong Road Overpass Kerbs">
-          </div>
-          <div class="pc-body">
-            <div class="pc-meta">
-              <span class="pc-tag">📍 Nairobi</span>
-              <span class="pc-tag">🏗️ Subcontract</span>
-            </div>
-            <p class="pc-desc">Labor management, workmanship & quality control for kerbs and sidewalks on the Ngong Road overpass project.</p>
-            <div class="pc-client">Client: <strong>Centunion Construction Ltd</strong></div>
-          </div>
-        </div>
-        <div class="project-card reveal">
-          <div class="pc-header">
-            <div>
-              <div class="pc-type">Commercial</div>
-              <div class="pc-name">Yaya Centre Cabro Paving</div>
-            </div>
-            <div class="pc-status status-completed">Completed</div>
-          </div>
-          <div class="pc-image">
-            <img src="images/yaya2.jpeg" alt="Yaya Centre Cabro Paving">
-          </div>
-          <div class="pc-body">
-            <div class="pc-meta">
-              <span class="pc-tag">📍 Nairobi</span>
-              <span class="pc-tag">🚗 Parking & Walkways</span>
-            </div>
-            <p class="pc-desc">Cabro supply & fix, drainage, kerbs and road channels for Yaya Centre's parking and loading zone.</p>
-            <div class="pc-client">Client: <strong>ZJCC Company</strong></div>
-          </div>
-        </div>
-        <div class="project-card reveal">
-          <div class="pc-header">
-            <div>
-              <div class="pc-type">Non Profit & NGO</div>
-              <div class="pc-name">Community Baptist Church</div>
-            </div>
-            <div class="pc-status status-completed">Completed</div>
-          </div>
-          <div class="pc-image">
-            <img src="images/cbc1.jpg" alt="Community Baptist Church">
-          </div>
-          <div class="pc-body">
-            <div class="pc-meta">
-              <span class="pc-tag">📍 Ruiru, Nairobi</span>
-              <span class="pc-tag">🏡 Non Profit & NGO</span>
-            </div>
-            <p class="pc-desc">Complete flooring restoration including slab block installation, concrete works, labor management, plastering, and full interior repainting.</p>
-            <div class="pc-client">Client: <strong>Community Baptist Church</strong></div>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:40px;">
-        <a href="#" class="btn-primary" onclick="showPage('projects')">View All Projects</a>
-      </div>
-    </div>
-  </section>
+<section class="projects-preview-premium">
 
+  <div style="text-align:center;padding:120px 20px 40px;position:relative;z-index:2;">
+      <span class="section-tag">OUR WORKS</span>
+      <h2 class="section-title" style="color:white;">
+          Pure Engineering <span>Excellence</span>
+      </h2>
+      <p style="max-width:700px;margin:auto;color:rgba(255,255,255,.65);line-height:1.8;">
+          Every project is a reflection of our commitment to precision,
+          quality workmanship, and long-term value.
+      </p>
+  </div>
+
+  <!-- PROJECT 01 -->
+  <div class="project-showcase reveal">
+
+      <div class="about-img-wrap reveal">
+          <img src="images/ngongmain.jpeg" alt="">
+      </div>
+
+      <div class="project-content">
+          <!-- <div class="project-number">01</div> -->
+
+          <div class="project-category">
+              Civil Infrastructure
+          </div>
+<!-- 
+          <h3 class="project-title">
+              Ngong Road Overpass
+          </h3> -->
+
+          <!-- <div class="project-meta">
+              <div class="project-pill">📍 Nairobi</div>
+              <div class="project-pill">🏗 Subcontract</div>
+              <div class="project-pill">⚡ Ongoing</div>
+          </div> -->
+
+          <p class="project-description">
+              Labor management, workmanship supervision,
+              quality assurance, kerb installation and sidewalk
+              construction for one of Nairobi's major transport
+              infrastructure developments.
+          </p>
+
+          <!-- <div class="project-client">
+              Client: <strong>Centunion (E.A) Ltd</strong>
+          </div> -->
+      </div>
+
+  </div>
+
+  <div class="project-divider"></div>
+
+  <!-- PROJECT 02 -->
+  <div class="project-showcase reverse reveal">
+
+      <div class="about-img-wrap reveal">
+          <img src="images/yaya2.jpeg" alt="">
+      </div>
+
+      <div class="project-content">
+          <!-- <div class="project-number">02</div> -->
+
+          <div class="project-category">
+              Cabro Paving & Surface Works
+          </div>
+
+          <!-- <h3 class="project-title">
+              Yaya Centre Cabro Paving
+          </h3> -->
+
+          <!-- <div class="project-meta">
+              <div class="project-pill">📍 Nairobi</div>
+              <div class="project-pill">🚗 Parking & Walkways</div>
+              <div class="project-pill">✔ Completed</div>
+          </div> -->
+
+          <p class="project-description">
+              Complete cabro paving installation,
+              drainage works, kerbs, channels and
+              surface finishing for high-traffic
+              commercial access routes and loading zones.
+          </p>
+
+          <!-- <div class="project-client">
+              Client: <strong>ZJCC Company</strong>
+          </div> -->
+      </div>
+
+  </div>
+
+  <div class="project-divider"></div>
+
+  <!-- PROJECT 03 -->
+  <div class="project-showcase reveal">
+
+      <div class="about-img-wrap reveal">
+          <img src="images/cbc1.jpg" alt="">
+      </div>
+
+      <div class="project-content">
+          <!-- <div class="project-number">03</div> -->
+
+          <div class="project-category">
+              Slabs & Pavements
+          </div>
+
+          <!-- <h3 class="project-title">
+              Community Baptist Church
+          </h3> -->
+
+          <!-- <div class="project-meta">
+              <div class="project-pill">📍 Ruiru</div>
+              <div class="project-pill">🏛 NGO Project</div>
+              <div class="project-pill">✔ Completed</div>
+          </div> -->
+
+          <p class="project-description">
+              Full flooring restoration,
+              slab block installation,
+              concrete works, plastering,
+              repainting and interior renewal,
+              creating a durable and modern worship environment.
+          </p>
+
+          <!-- <div class="project-client">
+              Client: <strong>Community Baptist Church</strong>
+          </div> -->
+      </div>
+
+  </div>
+
+  <!-- <div style="text-align:center;padding:60px 20px 120px;position:relative;z-index:2;">
+      <a href="#" class="btn-primary"
+         onclick="showPage('projects')">
+         Explore Full Portfolio
+      </a>
+  </div> -->
+
+</section>
   <!-- CTA Banner -->
   <section style="background:var(--navy); padding:80px 40px; text-align:center; position:relative; overflow:hidden;">
     <div style="position:absolute;top:0;left:0;right:0;bottom:0; background: repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(200,150,12,0.03) 40px,rgba(200,150,12,0.03) 41px);"></div>
@@ -997,7 +1258,7 @@
   <div class="about-page-hero">
     <div class="container">
       <span class="section-tag">Our Story</span>
-      <h1 class="section-title">About WÉNSẼN CONSTRUCTION COMPANY</h1>
+      <h1 class="section-title">About WÉNSĒN CONSTRUCTION COMPANY</h1>
       <p class="section-body">A newly established construction company built on experience, integrity, and an unwavering commitment to quality across Kenya.</p>
     </div>
   </div>
@@ -1008,7 +1269,7 @@
         <div class="reveal">
           <span class="section-tag">Who We Are</span>
           <h2 class="section-title">Building with <span>Purpose</span></h2>
-          <p class="section-body">WÉNSẼN CONSTRUCTION COMPANY LTD is a dynamic construction company headquartered in Nairobi, Kenya. Though newly established, our team brings deep hands-on expertise across residential, commercial, and civil infrastructure projects.</p>
+          <p class="section-body">WÉNSĒN CONSTRUCTION COMPANY LTD is a dynamic construction company headquartered in Nairobi, Kenya. Though newly established, our team brings deep hands-on expertise across residential, commercial, and civil infrastructure projects.</p>
           <p class="section-body" style="margin-top:16px;">Our name reflects a blend of vision — "Morgen" meaning tomorrow in German — and the spirit of family legacy in building Kenya's future structures together.</p>
           <p class="section-body" style="margin-top:16px;">We operate across Nairobi & Central Kenya, the Rift Valley, and are expanding our footprint nationwide, combining technical precision with client-centred delivery on every project.</p>
         </div>
@@ -1039,7 +1300,7 @@
         <div class="team-info">
           <div class="team-name">Vincent Kioko</div>
           <div class="team-role">Founder & Director</div>
-          <p class="team-bio">Vincent Kioko is the visionary behind WÉNSẼN CONSTRUCTION COMPANY LTD. With a hands-on background in construction management, civil works, and client relations, Vincent founded the company with the mission of delivering high-quality, dependable construction services across Kenya. He leads the company's strategic direction, project oversight, and client engagement — ensuring every project reflects the company's commitment to excellence, innovation, and integrity.</p>
+          <p class="team-bio">Vincent Kioko is the visionary behind WÉNSĒN CONSTRUCTION COMPANY LTD. With a hands-on background in construction management, civil works, and client relations, Vincent founded the company with the mission of delivering high-quality, dependable construction services across Kenya. He leads the company's strategic direction, project oversight, and client engagement — ensuring every project reflects the company's commitment to excellence, innovation, and integrity.</p>
         </div>
       </div>
     </div>
@@ -1062,7 +1323,7 @@
         <div class="cert-card reveal">
           <div class="cert-badge">🏗️</div>
           <div class="cert-info">
-            <h4>NCA Category 8</h4>
+            <h4>NCA Category 7</h4>
             <p>National Construction Authority (NCA) registered, Category NCA7 — authorizing the company to undertake construction works as defined under the NCA Act, Kenya.</p>
           </div>
         </div>
@@ -1219,7 +1480,7 @@
           <span class="pc-tag">📅 Ending May 2026</span>
         </div>
         <p class="pc-desc">Management of labor, workmanship, and quality control for kerbs and sidewalk works as part of a large overpass construction project along Ngong Road. Responsible for ensuring all civil works meet project specifications and safety standards.</p>
-        <div class="pc-client">Client: <strong>Centunion Construction Ltd</strong> &nbsp;|&nbsp; Role: Subcontractor</div>
+        <div class="pc-client">Client: <strong>Centunion (E.A) Ltd</strong> &nbsp;|&nbsp; Role: Subcontractor</div>
       </div>
     </div>
 
@@ -1407,7 +1668,7 @@
     <div class="container">
       <span class="section-tag">Join Our Team</span>
       <h1 class="section-title">Need <span>Work?</span></h1>
-      <p class="section-body">WÉNSẼN CONSTRUCTION COMPANY LTD is always looking for skilled and motivated individuals to join our projects. Express your interest and we'll reach out when opportunities arise.</p>
+      <p class="section-body">WÉNSĒN CONSTRUCTION COMPANY LTD is always looking for skilled and motivated individuals to join our projects. Express your interest and we'll reach out when opportunities arise.</p>
       <a href="#work-form" class="btn-primary" onclick="document.getElementById('work-form').scrollIntoView({behavior:'smooth'})">Apply Now</a>
     </div>
   </div>
@@ -1545,7 +1806,7 @@
         </div>
         <div class="form-group">
           <label>Tell Us About Yourself</label>
-          <textarea placeholder="Briefly describe your experience, past projects you've worked on, any special skills or tools you work with, and why you'd like to work with WÉNSẼN CONSTRUCTION COMPANY LTD..."></textarea>
+          <textarea placeholder="Briefly describe your experience, past projects you've worked on, any special skills or tools you work with, and why you'd like to work with WÉNSĒN CONSTRUCTION COMPANY LTD..."></textarea>
         </div>
         <button type="submit" class="btn-submit">Submit Application</button>
         <div class="form-success" id="workSuccess" style="background:rgba(46,125,50,0.15); border-color:#81c784; color:#81c784;">
@@ -1560,7 +1821,7 @@
 <footer id="mainFooter">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="brand">WÉNSẼN CONSTRUCTION COMPANY LTD</div>
+      <div class="brand">WSCC</div>
       <div class="tagline">Building Kenya's Future, One Structure at a Time</div>
       <p>A fully registered construction company based in Nairobi, Kenya — delivering residential, commercial, and civil infrastructure projects with precision and integrity.</p>
     </div>
@@ -1597,7 +1858,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 WÉNSẼN CONSTRUCTION COMPANY LTD. All rights reserved. | NCA8 Registered | BRS Certified | NEMA Approved</p>
+    <p>© 2025 WÉNSĒN CONSTRUCTION COMPANY LTD. All rights reserved. | NCA8 Registered | BRS Certified | NEMA Approved</p>
     <p style="color:rgba(255,255,255,0.2); font-size:11px;">Nairobi, Kenya</p>
   </div>
 </footer>
