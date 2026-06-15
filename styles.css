@@ -21,11 +21,14 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: var(--white);
     color: var(--text);
     overflow-x: hidden;
   }
+  /* body {
+  font-family: 'Montserrat', sans-serif;
+} */
 
   /* ===================== NAV ===================== */
   nav {
@@ -41,19 +44,15 @@
     display: flex; flex-direction: column; line-height: 1;
     filter: invert(100%);
   }
-  .nav-logo .brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px; font-weight: 900;
-    color: var(--white); letter-spacing: 1px;
-  }
+ 
   .nav-logo .sub {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 10px; color: var(--gold); letter-spacing: 3px;
     text-transform: uppercase;
   }
   .nav-links { display: flex; gap: 6px; align-items: center; }
   .nav-links a {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
     text-transform: uppercase; color: rgba(255,255,255,0.8);
     text-decoration: none; padding: 8px 14px; border-radius: 2px;
@@ -104,7 +103,7 @@
     position: relative; z-index: 1;
   }
   .hero-tag {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 12px; font-weight: 700; letter-spacing: 4px;
     text-transform: uppercase; color: var(--gold);
     display: inline-block; margin-bottom: 24px;
@@ -112,15 +111,16 @@
     animation: fadeUp 0.8s ease both;
   }
   .hero h1 {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: clamp(48px, 7vw, 88px); font-weight: 900;
     line-height: 1.0; color: var(--white);
     animation: fadeUp 0.8s 0.15s ease both;
   }
-  .hero h1 em {
-    font-style: italic; color: var(--gold);
+  .hero h1 div {
+    color: var(--gold);
     display: block;
   }
+
   .hero-sub {
     font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.75);
     max-width: 1000px; margin: 28px 0 24px;
@@ -164,7 +164,7 @@
     z-index: 1;
   }
   .ha-kicker {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 3px;
@@ -174,7 +174,7 @@
     z-index: 1;
   }
   .ha-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 18px;
     font-weight: 800;
     letter-spacing: 0.2px;
@@ -201,7 +201,7 @@
   }
   .btn-primary {
     background: var(--gold); color: var(--navy);
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 14px; font-weight: 700; letter-spacing: 2px;
     text-transform: uppercase; padding: 16px 36px;
     border: none; cursor: pointer; text-decoration: none;
@@ -211,7 +211,7 @@
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
   .btn-secondary {
     background: transparent; color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 14px; font-weight: 600; letter-spacing: 2px;
     text-transform: uppercase; padding: 15px 36px;
     border: 1px solid rgba(255,255,255,0.4); cursor: pointer;
@@ -228,7 +228,7 @@
   }
   .stat-item { text-align: left; }
   .stat-num {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 42px; font-weight: 900; color: var(--gold);
     line-height: 1;
   }
@@ -259,7 +259,7 @@
   .service-tile:hover .st-icon { color: var(--gold); }
   .st-icon { font-size: 28px; margin-bottom: 12px; transition: var(--transition); }
   .st-name {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 12px; font-weight: 700; letter-spacing: 2px;
     text-transform: uppercase; color: rgba(255,255,255,0.7);
   }
@@ -269,13 +269,13 @@
   .container { max-width: 1200px; margin: 0 auto; }
 
   .section-tag {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 11px; font-weight: 700; letter-spacing: 4px;
     text-transform: uppercase; color: var(--gold);
     margin-bottom: 12px; display: block;
   }
   .section-title {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: clamp(32px, 4vw, 52px); font-weight: 900;
     color: var(--navy); line-height: 1.1;
     margin-bottom: 24px;
@@ -309,11 +309,11 @@
     text-align: center;
   }
   .about-badge .num {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 40px; font-weight: 900; color: var(--navy); line-height: 1;
   }
   .about-badge .lbl {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 10px; font-weight: 700; letter-spacing: 2px;
     text-transform: uppercase; color: var(--navy-mid);
     margin-top: 4px;
@@ -329,7 +329,7 @@
   .value-item:hover { background: var(--gold-pale); transform: translateX(4px); }
   .vi-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
   .vi-text h4 {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 14px; font-weight: 700; letter-spacing: 1px;
     text-transform: uppercase; color: var(--navy); margin-bottom: 2px;
   }
@@ -345,7 +345,7 @@
   .projects-hero::after {
     content: 'PROJECTS';
     position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 140px; font-weight: 900; color: rgba(255,255,255,0.04);
     pointer-events: none; white-space: nowrap;
   }
@@ -369,12 +369,12 @@
     display: flex; justify-content: space-between; align-items: flex-start;
   }
   .pc-type {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 10px; font-weight: 700; letter-spacing: 3px;
     text-transform: uppercase; color: var(--gold);
   }
   .pc-status {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 11px; font-weight: 700; letter-spacing: 1px;
     text-transform: uppercase; padding: 4px 12px;
     border-radius: 20px;
@@ -382,7 +382,7 @@
   .status-ongoing { background: rgba(46,125,50,0.25); color: #81c784; }
   .status-completed { background: rgba(200,150,12,0.25); color: var(--gold-light); }
   .pc-name {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 20px; font-weight: 700; color: var(--white);
     margin-top: 10px; line-height: 1.3;
   }
@@ -440,7 +440,7 @@
     transition: var(--transition);
   }
   .svc-title {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 22px; font-weight: 700; color: var(--navy);
     margin-bottom: 14px; transition: var(--transition);
   }
@@ -482,11 +482,11 @@
   .team-accent { width: 8px; background: var(--gold); flex-shrink: 0; }
   .team-info { padding: 40px; }
   .team-name {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 30px; font-weight: 900; color: var(--navy); margin-bottom: 4px;
   }
   .team-role {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 13px; font-weight: 700; letter-spacing: 2px;
     text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
   }
@@ -509,7 +509,7 @@
     font-size: 22px; flex-shrink: 0; color: var(--gold);
   }
   .cert-info h4 {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 15px; font-weight: 700; letter-spacing: 1px;
     text-transform: uppercase; color: var(--navy); margin-bottom: 6px;
   }
@@ -550,7 +550,7 @@
     font-size: 20px; flex-shrink: 0;
   }
   .ci-text h4 {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 11px; font-weight: 700; letter-spacing: 3px;
     text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
   }
@@ -560,7 +560,7 @@
 
   .contact-form-wrap { padding: 80px 60px; background: var(--white); }
   .form-title {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 36px; font-weight: 900; color: var(--navy); margin-bottom: 8px;
   }
   .form-sub { font-size: 15px; color: var(--gray-500); margin-bottom: 40px; }
@@ -568,7 +568,7 @@
   .form-group { margin-bottom: 24px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   label {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 11px; font-weight: 700; letter-spacing: 2px;
     text-transform: uppercase; color: var(--navy-mid);
     display: block; margin-bottom: 8px;
@@ -588,7 +588,7 @@
   textarea { resize: vertical; min-height: 130px; }
   .btn-submit {
     background: var(--navy); color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 14px; font-weight: 700; letter-spacing: 2px;
     text-transform: uppercase; padding: 18px 48px;
     border: none; cursor: pointer; width: 100%;
@@ -625,18 +625,18 @@
   }
   .benefit-item:last-child { border-bottom: none; }
   .bi-num {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 36px; font-weight: 900; color: var(--gold-pale);
     line-height: 1; flex-shrink: 0; min-width: 40px;
   }
   .bi-text h4 {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 15px; font-weight: 700; letter-spacing: 1px;
     text-transform: uppercase; color: var(--navy); margin-bottom: 4px;
   }
   .bi-text p { font-size: 13px; color: var(--gray-700); line-height: 1.6; }
   .roles-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 12px; font-weight: 700; letter-spacing: 3px;
     text-transform: uppercase; color: var(--gold);
     margin-bottom: 16px;
@@ -644,7 +644,7 @@
   .role-tag {
     display: inline-block; padding: 8px 16px; margin: 0 8px 8px 0;
     background: var(--navy); color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 12px; font-weight: 600; letter-spacing: 1px;
     text-transform: uppercase; cursor: default;
     transition: var(--transition);
@@ -658,12 +658,12 @@
   .work-form-wrap::before {
     content: 'JOIN US';
     position: absolute; right: -30px; top: 50%; transform: translateY(-50%);
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 120px; font-weight: 900; color: rgba(255,255,255,0.03);
     pointer-events: none;
   }
   .wf-title {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 32px; font-weight: 900; color: var(--white); margin-bottom: 6px;
   }
   .wf-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 40px; }
@@ -699,7 +699,7 @@
     gap: 48px; margin-bottom: 48px;
   }
   .footer-brand .brand {
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif; */
     font-size: 22px; font-weight: 900; color: var(--white); margin-bottom: 4px;
   }
   .footer-brand .tagline {
@@ -707,7 +707,7 @@
   }
   .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; }
   .footer-col h4 {
-    font-family: 'Barlow Condensed', sans-serif;
+    /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 11px; font-weight: 700; letter-spacing: 3px;
     text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
   }
@@ -811,8 +811,6 @@
 
 .project-showcase{
   position:relative;
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
   gap:80px;
   align-items:center;
   min-height:85vh;
