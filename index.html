@@ -909,12 +909,12 @@
         📞 <a href="tel:+254703618918" style="color:rgba(255,255,255,0.45); text-decoration:none;">+254 703 618 918</a><br><br>
         ✉️ <a href="mailto:kiokovincent12@gmail.com" style="color:rgba(255,255,255,0.45); text-decoration:none; font-size:12px;">kiokovincent12@gmail.com</a><br><br>
         🌐 <a href="https://www.wensenconstruction.com" style="color:rgba(255,255,255,0.45); text-decoration:none;">www.wensenconstruction.com</a><br><br>
-        🎵 <a href="https://tiktok.com/@v_morgen_ltd" style="color:rgba(255,255,255,0.45); text-decoration:none;">@v_morgen_ltd</a>
+        🎵 <a href="https://tiktok.com/@wensenconstruction" style="color:rgba(255,255,255,0.45); text-decoration:none;">@wensenconstruction</a>
       </p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 WÉNSĒN CONSTRUCTION COMPANY LTD. All rights reserved. | NCA8 Registered | BRS Certified | NEMA Approved</p>
+    <p>© 2025 WénSēn Construction Company LTD. All rights reserved. | NCA Registered | BRS Certified | NEMA Approved</p>
     <p style="color:rgba(255,255,255,0.2); font-size:11px;">Nairobi, Kenya</p>
   </div>
 </footer>
@@ -947,13 +947,13 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((e, i) => {
           if (e.isIntersecting) {
-            setTimeout(() => e.target.classList.add('visible'), i * 80);
+            setTimeout(() => e.target.classList.add('visible'), i * 10);
             observer.unobserve(e.target);
           }
         });
       }, { threshold: 0.1 });
       els.forEach(el => { el.classList.remove('visible'); observer.observe(el); });
-    }, 50);
+    }, 10);
   }
 
   // Scroll top button
