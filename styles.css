@@ -50,12 +50,12 @@
     font-size: 10px; color: var(--gold); letter-spacing: 3px;
     text-transform: uppercase;
   }
-  .nav-links { display: flex; gap: 6px; align-items: center; }
+  .nav-links { display: flex; gap: 4px; align-items: center; }
   .nav-links a {
     /* font-family: 'Barlow Condensed', sans-serif; */
     font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
     text-transform: uppercase; color: rgba(255,255,255,0.8);
-    text-decoration: none; padding: 8px 14px; border-radius: 2px;
+    text-decoration: none; padding: 6px 12px; border-radius: 2px;
     transition: var(--transition); position: relative;
   }
   .nav-links a::after {
@@ -69,7 +69,7 @@
   .nav-links a.active::after { transform: scaleX(1); }
   .nav-cta {
     background: var(--gold) !important; color: var(--navy) !important;
-    font-weight: 700 !important; padding: 8px 18px !important;
+    font-weight: 700 !important; padding: 4px 6px !important;
     border-radius: 2px;
   }
   .nav-cta:hover { background: var(--gold-light) !important; }
@@ -760,7 +760,7 @@
     .form-row { grid-template-columns: 1fr; }
     nav { padding: 0 20px; }
     .nav-links { gap: 0; }
-    .nav-links a { padding: 8px 8px; font-size: 11px; }
+    .nav-links a { padding: 6px 6px; font-size: 11px; }
     .hero-stats { gap: 24px; }
   }
   @media (max-width: 600px) {
