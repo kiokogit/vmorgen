@@ -291,7 +291,13 @@
   .about-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 80px; align-items: center; margin-top: 60px;
+    direction: ltr;
   }
+  .about-grid-reverse {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center; margin-top: 60px;
+  direction: rtl;           /* Reset text direction for children */
+}
   .about-img-wrap {
     position: relative;
   }
@@ -941,6 +947,7 @@
   height:1px;
   max-width:1400px;
   margin:auto;
+  padding:0 60px;
   background:linear-gradient(
       90deg,
       transparent,
