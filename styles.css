@@ -759,7 +759,7 @@
 
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 900px) {
-    .about-grid, .work-intro-grid, .contact-layout { grid-template-columns: 1fr; }
+    .about-grid, .work-intro-grid, .contact-layout, .about-grid-reverse { grid-template-columns: 1fr; }
     .contact-layout { min-height: auto; }
     .services-strip { grid-template-columns: repeat(3, 1fr); }
     .certs-grid { grid-template-columns: 1fr 1fr; }
@@ -915,6 +915,8 @@
   font-size:17px;
   line-height:1.9;
   margin-bottom:30px;
+  text-align:left;
+  direction:ltr;
 }
 
 .project-meta{
